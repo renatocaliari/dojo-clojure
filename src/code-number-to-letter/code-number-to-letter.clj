@@ -32,6 +32,6 @@
 
 (defn code-to-letter
   [code-str]
-  (let [code-grouped (partition-by identity code-str)]
+  (let [code-grouped (partition-by identity code-str)] ;; try to change to (reduce conj #{} "string")
     (let [code-keyword (map (comp keyword (partial apply str)) code-grouped)]
       (apply str (map-code code-keyword)))))
