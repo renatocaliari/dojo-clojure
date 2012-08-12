@@ -30,7 +30,7 @@
   (map map-letter code-keyword))
 
 (defn code-to-letter
-  "Convert all numbers to yous respective letters according to data previously specified"
+  "Convert all numbers to yours respective letters according to data previously specified"
   [code-str]
   (let [code-grouped (partition-by identity code-str)]
     (let [code-keyword (map (comp keyword (partial apply str)) code-grouped)]
