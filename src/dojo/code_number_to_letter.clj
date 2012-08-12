@@ -20,18 +20,18 @@
 
 (defn map-letter
   [code-keyword]
-  (let [code-found (code-keyword codes)]
-    (if (= code-found nil)
-      (let [next-code (found-next-code code-keyword)]
-        (next-code codes))
-      code-found)))
+  (if-let [code-found (code-keyword codes)]
+    code-found
+    (let [next-code (found-next-code code-keyword)]
+      (next-code codes))))
 
 (defn map-code
   [code-keyword]
   (map map-letter code-keyword))
 
 (defn code-to-letter
+  "Convert all numbers to yous respective letters according to data previously specified"
   [code-str]
-  (let [code-grouped (partition-by identity code-str)] ;; try to change to (reduce conj #{} "string")
+  (let [code-grouped (partition-by identity code-str)]
     (let [code-keyword (map (comp keyword (partial apply str)) code-grouped)]
       (apply str (map-code code-keyword)))))
