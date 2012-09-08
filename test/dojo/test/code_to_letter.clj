@@ -2,12 +2,12 @@
  (:use [dojo.code-to-letter])
  (:use [clojure.test]))
 
-(testing "Converting numbers to letters"
-  (testing "with valid numbers"
-    (is (= "me" (convert-to-text "633"))))
-  (testing "with invalid chars"
-    (is (= "" (convert-to-text "abc"))))
-  (testing "with valid numbers and invalid chars"
-    (is (= "you" (convert-to-text "999a66688"))))
-  (testing "with pause"
-    (is (= "hi" (convert-to-text "44#444")))))
+
+(deftest convert
+  (testing "Converting numbers to letters"
+    (are [x y] (= x (convert-to-text y))
+         "me"  "633"
+         "you" "99966688"
+         "you" "999a66688"
+         ""    "abc"
+         "hi"  "44#444")))
