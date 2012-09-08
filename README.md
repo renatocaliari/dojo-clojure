@@ -7,7 +7,7 @@ It gets a string containing numbers and convert to text, simulating the behaviou
 
 To include a pause just send any unmapped char (e.g. "#") between numbers.
 
-0 = " "
+0 = " "  
 2 = ABC  
 3 = DEF  
 4 = GHI  
@@ -20,6 +20,6 @@ To include a pause just send any unmapped char (e.g. "#") between numbers.
 
 E.g.:
 
-dojo.code-to-letter> (convert-to-text "7773366286660222#25554442777444")
-; renato caliari
-;= nil
+dojo.code-to-letter> (convert-to-text "7773366286660222#25554442777444")  
+; renato caliari  
+;= nil  
