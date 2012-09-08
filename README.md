@@ -1,7 +1,7 @@
 Dojo-Clojure
 ============
 
-## src/code_number_to_letter.clj
+## src/code_to_letter.clj
 
 It gets a string containing numbers and convert to text, simulating the behaviour and results from a telephone keypad.
 
